@@ -1,19 +1,37 @@
+export function add(a: number, b: number): number {
+  return a + b
+}
+
+export function isEven(n: number): boolean {
+  return n % 2 === 0
+}
+
 export function clamp(value: number, min: number, max: number): number {
-  return 0
+  if (value < min) return min
+  if (value > max) return max
+  return value
 }
 
 export function isBetween(value: number, min: number, max: number): boolean {
-  return false
+  return value >= min && value <= max
 }
 
 export function first<T>(array: T[]): T | undefined {
-  return undefined
+  return array[0]
 }
 
 export function pluckNames(items: { name: string }[]): string[] {
-  return []
+  return items.map(item => item.name)
+}
+
+export function makeUser(name: string, age: number): { name: string; age: number } {
+  return { name, age }
+}
+
+export function printLength(text: string): number {
+  return text.length
 }
 
 export function repeat(text: string, count: number): string {
-  return ''
+  return text.repeat(count)
 }
